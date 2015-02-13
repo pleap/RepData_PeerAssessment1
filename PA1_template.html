@@ -90,9 +90,9 @@ if (window.hljs && document.readyState && document.readyState === "complete") {
 <li><p>Calculate and report the mean and median of the total number of steps taken per day</p></li>
 </ul>
 <pre class="r"><code>by_day&lt;-data %&gt;%
+  filter (steps != &quot;NA&quot;) %&gt;%
   group_by(date) %&gt;% 
-  summarise_each(funs(sum), steps) %&gt;% 
-  filter (steps != &quot;NA&quot;)
+  summarise_each(funs(sum), steps)
 by_day</code></pre>
 <pre><code>## Source: local data frame [53 x 2]
 ## 

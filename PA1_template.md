@@ -40,9 +40,9 @@ For this part of the assignment, you can ignore the missing values in the datase
 
 ```r
 by_day<-data %>%
+  filter (steps != "NA") %>%
   group_by(date) %>% 
-  summarise_each(funs(sum), steps) %>% 
-  filter (steps != "NA")
+  summarise_each(funs(sum), steps)
 by_day
 ```
 
